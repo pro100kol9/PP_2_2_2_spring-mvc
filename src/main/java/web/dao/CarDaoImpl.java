@@ -23,8 +23,7 @@ public class CarDaoImpl implements CarDao {
     public List<Car> getCarsList(int count) {
         List<Car> countCarList = createCarList();
         if (count <= 5) {
-            countCarList = createCarList().stream().limit(count).collect(Collectors
-                    .toCollection(ArrayList::new));
+            countCarList = createCarList().stream().limit(count).collect(Collectors.toCollection(ArrayList::new));
         }
         return countCarList;
     }
