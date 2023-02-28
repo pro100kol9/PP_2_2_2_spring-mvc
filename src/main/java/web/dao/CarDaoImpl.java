@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 @Component
 public class CarDaoImpl implements CarDao {
-    public List<Car> createCarList() {
+    private List<Car> createCarList() {
         List<Car> carList = new ArrayList<>();
         carList.add(new Car("Mazda", "3", 180));
         carList.add(new Car("Nissan", "R34", 280));
