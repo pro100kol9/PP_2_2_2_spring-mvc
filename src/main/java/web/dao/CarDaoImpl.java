@@ -15,7 +15,7 @@ public class CarDaoImpl implements CarDao {
         carList.add(new Car("Nissan", "R34", 280));
         carList.add(new Car("BMW", "X5M", 290));
         carList.add(new Car("Lada", "2101", 120));
-        carList.add(new Car("Toyota", "Corolla", 180));
+        carList.add(new Car("Toyota", "MarkII", 180));
         return carList;
     }
 
