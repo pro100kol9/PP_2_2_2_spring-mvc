@@ -9,26 +9,24 @@ import java.util.stream.Collectors;
 
 @Component
 public class CarDaoImpl implements CarDao {
-    private List<Car> createCarList() {
-        List<Car> carList = new ArrayList<>();
+    private final List<Car> carList;
+
+    public CarDaoImpl() {
+        carList = new ArrayList<>();
         carList.add(new Car("Mazda", "3", 180));
         carList.add(new Car("Nissan", "R34", 280));
         carList.add(new Car("BMW", "X5M", 290));
         carList.add(new Car("Lada", "2101", 120));
         carList.add(new Car("Toyota", "MarkII", 180));
-        return carList;
     }
 
     @Override
     public List<Car> getCarsList(int count) {
-        List<Car> countCarList = createCarList();
+        List<Car> countCarList = new ArrayList<>();
         if (count <= 5) {
-            countCarList = createCarList().stream().limit(count).collect(Collectors.toCollection(ArrayList::new));
+            countCarList = carList.stream().limit(count).collect(Collectors.toList());
         }
         return countCarList;
     }
 
 }
-
-
-
